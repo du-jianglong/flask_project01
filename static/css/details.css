@@ -1,0 +1,48 @@
+.details .title, .details .info {
+  text-align: center; }
+.details .info .author {
+  margin-right: 20px; }
+.details .content {
+  text-align: justify;
+  padding: 20px 0;
+  border-style: solid none solid none;
+  border-width: 1px;
+  border-color: #dddddd; }
+.details .form-group label {
+  font-weight: bold; }
+.details .commen_list {
+  margin-top: 50px; }
+  .details .commen_list .card {
+    border-style: none none solid none !important;
+    padding-top: 20px; }
+    .details .commen_list .card .top_box {
+      line-height: 50px; }
+      .details .commen_list .card .top_box .img_box, .details .commen_list .card .top_box .author {
+        display: inline;
+        float: left; }
+      .details .commen_list .card .top_box .author {
+        padding-left: 20px;
+        color: #999999; }
+      .details .commen_list .card .top_box .comment_time {
+        display: inline;
+        float: right;
+        color: #999999; }
+      .details .commen_list .card .top_box .img_box {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        padding: 1px;
+        border: 1px solid #cccccc;
+        position: relative; }
+        .details .commen_list .card .top_box .img_box img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto; }
+    .details .commen_list .card .card_body {
+      text-align: justify;
+      padding: 20px 50px 20px 70px; }
+
+/*# sourceMappingURL=details.css.map */

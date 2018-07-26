@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ question_model.title }}-{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+{% endblock %}
+
+{% block main %}
+    <div class="details">
+        <h3 class="title">{{ question_model.title }}</h3>
+        <p class="info">
+            <span class="author">作者：{{ question_model.author.nickname }}</span>
+            <span>创建时间：{{ question_model.create_time }}</span>
+        </p>
+        <p class="content">{{ question_model.content }}</p>
+
+        <form action="{{ url_for('details_comment') }}" method="post">
+            <div class="form-group">
+                <label for="comment">评论：（{{ comment_len }}）</label>
+                <textarea class="form-control" id="comment" rows="3" name="content" placeholder="请输入内容..."></textarea>
+                <input type="hidden" name="question_id" value="{{ question_model.id }}">
+            </div>
+            <button type="submit" class="btn btn-primary">立即评论</button>
+        </form>
+
+        <div class="commen_list">
+            {% for item in question_model.comment %}
+                <div class="card">
+                    <div class="top_box">
+                        <div class="img_box">
+                            <img src="{{ url_for('static', filename='images/img/miao.jpg') }}" alt="">
+                        </div>
+                        <div class="author">{{ item.author.nickname }}</div>
+                        <div class="comment_time">{{ item.comment_time }}</div>
+                    </div>
+                    <div class="card_body">
+                        {{ item.content }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
